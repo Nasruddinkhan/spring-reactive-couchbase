@@ -1,0 +1,24 @@
+server:
+  port: 8019
+spring:
+  couchbase:
+    bucket:
+      name: employee
+    bootstrap-hosts: localhost
+    port: 8091
+    password: 123456
+    username: Administrator
+    rule:
+      - abc
+      - pqr
+      - mno
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: swagger-ui.html
+logging:
+  level:
+    com.mypractice.couchbase: DEBUG
+    org.springframework.data.couchbase.repository.query: DEBUG
+
