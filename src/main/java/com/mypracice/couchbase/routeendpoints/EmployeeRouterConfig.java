@@ -32,11 +32,13 @@ public class EmployeeRouterConfig {
     @RouterOperations(value = {
             @RouterOperation(path = "/employee",
                     beanClass = EmployeeHandler.class,
-                    beanMethod = "weatherResponse",
+                    beanMethod = "getEmployeeDetails",
                     method = RequestMethod.GET,
+
                     operation = @Operation(
                             summary = "Trigger an exception",
-                            parameters = {@Parameter(in = ParameterIn.QUERY,  required = true)},
+                            parameters = {@Parameter(in = ParameterIn.QUERY, name = "offset", required = true),
+                                    @Parameter(in = ParameterIn.QUERY, name = "limit", required = true)},
                             responses = @ApiResponse(
                                     responseCode = "200",
                                     description = "successful operation",
